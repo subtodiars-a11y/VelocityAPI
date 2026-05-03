@@ -1,0 +1,35 @@
+public partial class Form1 : Form
+{
+    private readonly VelAPI Velo = new VelAPI();
+    public Form1()
+    {
+        InitializeComponent();
+        Velo.StartCommunication();
+    }
+
+    private async void Inject()
+    {
+        try
+        {
+            var proc = Process.GetProcessesByName("RobloxPlayerBeta").FirstOrDefault();
+            if (proc == null)
+            {
+
+            }
+            if (Velo.IsAttached(proc.Id))
+            {
+
+            }
+            await Velo.Attach(proc.Id);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Injection failed: {ex.Message}", "Error");
+        }
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        Inject();
+    }
+}
