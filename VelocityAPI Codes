@@ -33,3 +33,4 @@ public partial class Form1 : Form
         Inject();
     }
 }
+<requestedExecutionLevel level="requireAdministrator" uiAccess="false" />    APP.MANIFEST
